@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>宠物技能图鉴</title>
+  <meta name="description" content="宠物技能图鉴 - 快速查看各类宠物技能">
   <link rel="stylesheet" href="style.css">
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="script.js" as="script">
+  <link rel="preload" href="data/file_index.json" as="fetch" crossorigin>
 </head>
 <body>
   <div class="container">
@@ -23,10 +27,19 @@
       </select>
     </div>
 
+    <!-- 加载指示器 -->
+    <div id="loading-indicator" class="loading-indicator" style="display: none;">
+      <div class="spinner"></div>
+      <p>加载中...</p>
+    </div>
+
     <!-- 宠物主体展示 -->
     <div class="pet-section" id="pet-section" style="display:none;">
       <h2 id="pet-name"></h2>
-      <img id="pet-image" src="" alt="宠物图片" class="pet-image">
+      <div class="image-container">
+        <img id="pet-image" src="" alt="宠物图片" class="pet-image lazy" loading="lazy">
+        <div class="image-placeholder"></div>
+      </div>
     </div>
 
     <!-- 技能展示 -->
@@ -42,7 +55,7 @@
   <!-- 图片模态框 -->
   <div id="image-modal" class="image-modal">
     <span id="close-modal">&times;</span>
-    <img class="modal-content" id="modal-img">
+    <img class="modal-content" id="modal-img" loading="eager">
     <div id="modal-caption"></div>
   </div>
 
