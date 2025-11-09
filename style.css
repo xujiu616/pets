@@ -55,8 +55,6 @@ select:focus, input:focus {
   box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
 }
 
-/* 移除了 #search 样式 */
-
 .pet-section {
   margin: 30px 0;
   animation: fadeIn 0.5s ease;
@@ -99,9 +97,6 @@ select:focus, input:focus {
   margin: 10px 0;
 }
 
-/* 移除了搜索高亮样式 */
-
-/* 修改技能展示区域为纵向布局 */
 #skills-container {
   display: flex;
   flex-direction: column;
@@ -113,7 +108,6 @@ select:focus, input:focus {
   margin-right: auto;
 }
 
-/* 修改技能卡片为左右布局 */
 .skill-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
   border-radius: 15px;
@@ -134,7 +128,6 @@ select:focus, input:focus {
   border-color: rgba(0, 212, 255, 0.3);
 }
 
-/* 左侧：技能图标和名称 */
 .skill-left {
   flex: 0 0 200px;
   display: flex;
@@ -178,10 +171,9 @@ select:focus, input:focus {
   max-width: 180px;
 }
 
-/* 右侧：技能描述 */
 .skill-right {
   flex: 1;
-  min-width: 0; /* 防止内容溢出 */
+  min-width: 0;
 }
 
 .skill-desc {
@@ -271,7 +263,6 @@ select:focus, input:focus {
   transform: scale(1.02);
 }
 
-/* 技能区域标题 */
 .skills-title {
   color: #ffd700;
   font-size: 1.5em;
@@ -281,7 +272,6 @@ select:focus, input:focus {
   border-left: 4px solid #ffd700;
 }
 
-/* 空状态提示 */
 .no-skills {
   text-align: center;
   color: #ccc;
