@@ -4,109 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>宠物技能图鉴</title>
-  <style>
-    /* 这里是你上传的 CSS 内容 */
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #f1f1f1;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      min-height: 100vh;
-    }
-
-    .container {
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      color: #00d4ff;
-      text-shadow: 0 0 12px #00d4ff;
-      margin-bottom: 30px;
-      font-size: 2.5em;
-    }
-
-    .selectors {
-      margin: 25px 15px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-    }
-
-    label {
-      font-weight: bold;
-      color: #00d4ff;
-      margin-right: 5px;
-    }
-
-    select, input {
-      margin: 0 10px;
-      padding: 8px 15px;
-      border-radius: 8px;
-      border: 2px solid #00d4ff;
-      outline: none;
-      background: rgba(255, 255, 255, 0.9);
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
-
-    select:focus, input:focus {
-      border-color: #ff6b6b;
-      box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
-    }
-
-    .pet-section {
-      margin: 30px 0;
-      animation: fadeIn 0.5s ease;
-    }
-
-    #pet-name {
-      color: #ffd700;
-      font-size: 2em;
-      margin-bottom: 15px;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-    }
-
-    .pet-image {
-      width: 320px;
-      height: 320px;
-      border-radius: 15px;
-      margin: 0 auto;
-      box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
-      object-fit: contain;
-      background: transparent;
-      padding: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .pet-image:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
-    }
-
-    .welcome-message {
-      text-align: center;
-      color: #ccc;
-      font-size: 1.2em;
-      line-height: 2;
-      margin: 50px 0;
-    }
-
-    .welcome-message p {
-      margin: 10px 0;
-    }
-
-    /* 其他样式 */
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -141,35 +39,13 @@
     </div>
   </div>
 
-  <script>
-    // 这里是你上传的 JS 内容
-    const categorySelect = document.getElementById('category');
-    const petSelect = document.getElementById('pet');
-    const petSection = document.getElementById('pet-section');
-    const petNameElement = document.getElementById('pet-name');
-    const petImage = document.getElementById('pet-image');
-    const skillsContainer = document.getElementById('skills-container');
+  <!-- 图片模态框 -->
+  <div id="image-modal" class="image-modal">
+    <span id="close-modal">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="modal-caption"></div>
+  </div>
 
-    // 这里可以加上宠物描述加载代码
-    async function loadPetDescription(petName) {
-      try {
-        const response = await fetch(`data/${petName}_技能体系.txt`);
-        const description = await response.text();
-        console.log(description);  // 输出宠物描述
-        // 你可以将描述加入到页面
-        skillsContainer.innerHTML += `<div>${description}</div>`;
-      } catch (error) {
-        console.error("加载宠物描述失败:", error);
-      }
-    }
-
-    async function init() {
-      // 初始化功能
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      init();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
